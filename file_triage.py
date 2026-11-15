@@ -33,7 +33,7 @@ def get_files(folder):
     files = []
     
     for path in sorted(base.rglob("*")):
-        if path.is_file():
+        if path.is_file() and not path.name.startswith("."):
             files.append(path)
             
     return files
@@ -49,13 +49,27 @@ def get_file_info(path):
         "modified": datetime.fromtimestamp(stat.st_mtime).strftime("%Y-%m-%d %H:%M:%S"),
         "sha256": hash_file(path)
     }
+    
+def classify_file(info, reference):
+    """add a status (known/unknown) and reference label to a file info dictionary"""
+    label = reference.get(info["sha256"])
+
+    if label is not None:
+        info["status"] = "known"
+        info["label"] = label
+    else:
+        info["status"] = "unknown"
+        info["label"] = None
+    
+    return info 
 
 if __name__ == "__main__":
     reference = load_reference("data/hashes_reference.csv")
 
     results = []
     for path in get_files("samples"):
-        results.append(get_file_info(path))
+        info = get_file_info(path)
+        results.append(classify_file(info, reference))
 
     for info in results:
-        print(info)
+        print(f"{info['filename']:15} {info['status']:8} {info['label']}")
