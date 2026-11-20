@@ -49,15 +49,24 @@ def get_files(folder):
 
 def get_file_info(path):
     """return a dictionary of facts about one file"""
-    stat = path.stat()
-    
-    return {
+    info = {
         "filename": path.name,
         "extension": path.suffix.lower(),
-        "size": stat.st_size,
-        "modified": datetime.fromtimestamp(stat.st_mtime).strftime("%Y-%m-%d %H:%M:%S"),
-        "sha256": hash_file(path)
+        "size": 0,
+        "modified": "",
+        "sha256": "",
+        "error": "",
     }
+
+    try:
+        stat = path.stat()
+        info["size"] = stat.st_size
+        info["modified"] = datetime.fromtimestamp(stat.st_mtime).strftime("%Y-%m-%d %H:%M:%S")
+        info["sha256"] = hash_file(path)
+    except (PermissionError, OSError) as e:
+        info["error"] = str(e)
+
+    return info
     
 def classify_file(info, reference):
     """add a status (known/unknown) and reference label to a file info dictionary"""
