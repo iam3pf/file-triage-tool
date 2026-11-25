@@ -1,0 +1,41 @@
+File Triage Report
+========================================
+Folder: samples
+Generated: 2026-11-25 12:07:34
+Files processed: 5
+Known files: 3
+Unknown files: 2
+errors: 0
+sample_a.txt    known   
+size: 153 bytes   modified: 2026-10-18 19:45:36
+sha256: 0682153a5a559dbbb265e02db83455d4f8ae7a0121643439055280d289c437ad
+matches reference: Known Baseline Text
+
+sample_b.txt    known   
+size: 153 bytes   modified: 2026-10-18 19:45:36
+sha256: 0682153a5a559dbbb265e02db83455d4f8ae7a0121643439055280d289c437ad
+matches reference: Known Baseline Text
+
+sample_c.txt    unknown 
+size: 154 bytes   modified: 2026-10-18 19:45:36
+sha256: 776e6bb134664392f337a18cbb3757a8a9d35a43c874b14334d77fb0e6cc359a
+
+sample_d.bin    known   
+size: 2048 bytes   modified: 2026-10-18 19:45:36
+sha256: ebdf6e5999be272c66881adf12358e341385ec8f291cecaf293af9fb8b166c54
+matches reference: Known Baseline Binary
+
+sample_e.bin    unknown 
+size: 537 bytes   modified: 2026-10-18 19:45:36
+sha256: 7676611ef9c01f00a97c51181218c37628753ede5705692a3dad54eb68c11450
+
+DUPLICATE FILES (same hash, possibly different names)
+----------------------------------------
+0682153a5a559dbb...: sample_a.txt, sample_b.txt
+
+Explanation of codes:
+----------------------------------------
+KNOWN: the hash matches the reference list, so the content is identical to a
+sample already labelled.
+UNKNOWN: not in the reference list. This is not proof of malware, and a
+one-byte change to a known file also gives an UNKNOWN result.

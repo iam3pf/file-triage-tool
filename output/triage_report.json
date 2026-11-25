@@ -1,0 +1,60 @@
+{
+  "files": [
+    {
+      "filename": "sample_a.txt",
+      "extension": ".txt",
+      "size": 153,
+      "modified": "2026-10-18 19:45:36",
+      "sha256": "0682153a5a559dbbb265e02db83455d4f8ae7a0121643439055280d289c437ad",
+      "error": "",
+      "status": "known",
+      "label": "Known Baseline Text"
+    },
+    {
+      "filename": "sample_b.txt",
+      "extension": ".txt",
+      "size": 153,
+      "modified": "2026-10-18 19:45:36",
+      "sha256": "0682153a5a559dbbb265e02db83455d4f8ae7a0121643439055280d289c437ad",
+      "error": "",
+      "status": "known",
+      "label": "Known Baseline Text"
+    },
+    {
+      "filename": "sample_c.txt",
+      "extension": ".txt",
+      "size": 154,
+      "modified": "2026-10-18 19:45:36",
+      "sha256": "776e6bb134664392f337a18cbb3757a8a9d35a43c874b14334d77fb0e6cc359a",
+      "error": "",
+      "status": "unknown",
+      "label": null
+    },
+    {
+      "filename": "sample_d.bin",
+      "extension": ".bin",
+      "size": 2048,
+      "modified": "2026-10-18 19:45:36",
+      "sha256": "ebdf6e5999be272c66881adf12358e341385ec8f291cecaf293af9fb8b166c54",
+      "error": "",
+      "status": "known",
+      "label": "Known Baseline Binary"
+    },
+    {
+      "filename": "sample_e.bin",
+      "extension": ".bin",
+      "size": 537,
+      "modified": "2026-10-18 19:45:36",
+      "sha256": "7676611ef9c01f00a97c51181218c37628753ede5705692a3dad54eb68c11450",
+      "error": "",
+      "status": "unknown",
+      "label": null
+    }
+  ],
+  "duplicates": {
+    "0682153a5a559dbbb265e02db83455d4f8ae7a0121643439055280d289c437ad": [
+      "sample_a.txt",
+      "sample_b.txt"
+    ]
+  }
+}
